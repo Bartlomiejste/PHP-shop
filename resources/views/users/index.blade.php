@@ -33,5 +33,11 @@
             @endforeach
         </tbody>
     </table>
+    {{$users->links()}}
 </div>
+@endsection
+@section('javascript')
+<script>
+    console.log("działa")
+</script>
 @endsection
