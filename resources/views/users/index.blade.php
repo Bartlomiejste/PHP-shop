@@ -25,7 +25,7 @@
                     <a href="#">
                         <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>Edit</button>
                     </a>
-                    <button class="btn btn-danger btn-sm delete">
+                    <button class="btn btn-danger btn-sm delete" data-id="{{$user->id}}">
                         <i class="far fa-trash-alt">Delete</i>
                     </button>
                 </td>
@@ -38,6 +38,20 @@
 @endsection
 @section('javascript')
 <script>
-    console.log("działa")
+    $(function() {
+        $('.delete').click(function() {
+            $.ajax({
+                    method: "DELETE",
+                    url: "http://localhost/users/" + $(this).data("id"),
+                })
+                .done(function(response) {
+                    window.location.reload();
+                    console.log("usunięto");
+                })
+                .fail(function(response) {
+                    console.log("error");
+                })
+        })
+    });
 </script>
 @endsection

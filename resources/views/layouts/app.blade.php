@@ -14,8 +14,9 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <!-- jquery - nie wiem czy tak można dodawać -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -81,9 +82,10 @@
             @yield('content')
         </main>
     </div>
-    @vite(['resources/js/app.js'])
 
-    @yield('javascript')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    @yield('javascript');
 
 </body>
 
