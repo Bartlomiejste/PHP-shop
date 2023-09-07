@@ -37,21 +37,8 @@
 </div>
 @endsection
 @section('javascript')
-<script>
-    $(function() {
-        $('.delete').click(function() {
-            $.ajax({
-                    method: "DELETE",
-                    url: "http://localhost/users/" + $(this).data("id"),
-                })
-                .done(function(response) {
-                    window.location.reload();
-                    console.log("usunięto");
-                })
-                .fail(function(response) {
-                    console.log("error");
-                })
-        })
-    });
-</script>
+const deleteUrl = "{{ url('users') }}/";
+@endsection
+@section('js-files')
+<script src="{{ asset('js/delete.js') }}"></script>
 @endsection
