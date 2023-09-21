@@ -14,7 +14,7 @@ $(function () {
                     method: "DELETE",
                     url: deleteUrl + $(this).data("id"),
                 })
-                    .done(function (data) {
+                    .done(function () {
                         Swal.fire({
                             title: "Usunięto!",
                             text: "Twój rekord został usunięty",

@@ -36,9 +36,11 @@
     {{$users->links()}}
 </div>
 @endsection
+
 @section('javascript')
 const deleteUrl = "{{ url('users') }}/";
 @endsection
+
 @section('js-files')
 <script src="{{ asset('js/delete.js') }}"></script>
 @endsection

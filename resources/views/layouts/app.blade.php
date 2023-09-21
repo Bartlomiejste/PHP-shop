@@ -17,6 +17,8 @@
     <!-- jquery - nie wiem czy tak można dodawać -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 
 <body>
@@ -62,6 +64,7 @@
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/users/list">Użytkownicy</a>
+                                <a class="dropdown-item" href="{{ route('products.index') }}">Produkty</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -82,12 +85,11 @@
             @yield('content')
         </main>
     </div>
-
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+<script type="text/javascript">
     @yield('javascript')
+</script>
 
-    @yield('js-files');
+    @yield('js-files')
 
 </body>
 
