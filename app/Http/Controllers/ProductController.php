@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Exception;
 
 class ProductController extends Controller
 {
@@ -33,6 +34,7 @@ class ProductController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $product = new Product($request->all());
+        $product->image_path = $request->file('image')->store('products');
         $product->save();
         return redirect(route('products.index'));
     }
@@ -42,7 +44,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show', [
+            'product'=> $product
+        ]);
     }
 
     /**
@@ -58,9 +62,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Product $product): RedirectResponse
     {
-        //
+        $product->fill($request->all());
+        $product->save();
+        return redirect(route('products.index'));
     }
 
     /**
@@ -68,6 +74,16 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        try {
+            $product->delete();
+            return response()->json([
+                'status' => 'success'
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Wystąpił błąd'
+            ])->setStatusCode(500);
+        }
     }
 }

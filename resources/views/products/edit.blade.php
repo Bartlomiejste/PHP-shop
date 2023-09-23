@@ -5,17 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Produkty') }}</div>
+                <div class="card-header">{{ __('Edycja produktu') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('products.update', $product->id) }}">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nazwa') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" maxlength="500" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" maxlength="500" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $product->name }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Opis') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" maxlength="1500" type="text" class="form-control @error('description') is-invalid @enderror" name="description" autofocus>{{old('desciprtion')}}</textarea>
+                                <textarea id="description" maxlength="1500" type="text" class="form-control @error('description') is-invalid @enderror" name="description" autofocus>{{ $product->description }}</textarea>
 
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="amount" class="col-md-4 col-form-label text-md-end">{{ __('Ilość') }}</label>
 
                             <div class="col-md-6">
-                                <input id="amount" min="0" type="number" class="form-control @error('amount') is-invalid @enderror" name="amount" value="{{ old('amount') }}" required autocomplete="amount" autofocus>
+                                <input id="amount" min="0" type="number" class="form-control @error('amount') is-invalid @enderror" name="amount" value="{{ $product->amount }}" required autocomplete="amount" autofocus>
 
                                 @error('amount')
                                 <span class="invalid-feedback" role="alert">
@@ -58,7 +58,7 @@
                             <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Cena') }}</label>
 
                             <div class="col-md-6">
-                                <input id="price" type="number" step="0.01" min="0" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price">
+                                <input id="price" type="number" step="0.01" min="0" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $product->price }}" required autocomplete="price">
 
                                 @error('price')
                                 <span class="invalid-feedback" role="alert">
@@ -68,20 +68,10 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Grafika') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="image" type="file" step="0.01" min="0" class="form-control" name="image">
-                            </div>
-                        </div>
-
-
-
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Dodaj') }}
+                                    {{ __('Edytuj') }}
                                 </button>
                             </div>
                         </div>

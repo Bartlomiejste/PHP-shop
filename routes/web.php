@@ -23,7 +23,11 @@ Route::get('/', function () {
 
 Route::get('/products', [ProductController::class, 'index'])->name(name:'products.index')->middleware('auth');
 Route::get('/products/create', [ProductController::class, 'create'])->name(name:'products.create')->middleware('auth');
+Route::get('/products/{product}', [ProductController::class, 'show'])->name(name:'products.show')->middleware('auth');
 Route::post('/products', [ProductController::class, 'store'])->name(name:'products.store')->middleware('auth');
+Route::get('/products/edit/{product}', [ProductController::class, 'edit'])->name(name:'products.edit')->middleware('auth');
+Route::post('/products/{product}', [ProductController::class, 'update'])->name(name:'products.update')->middleware('auth');
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->middleware('auth');
 
 Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware('auth');

@@ -35,9 +35,14 @@
                     <td>{{$product->amount}}</td>
                     <td>{{$product->price}}</td>
                     <td>
-                        <a href="#">
+                        <a href="{{route('products.show', $product->id) }}">
+                            <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>View</button>
+                        </a>
+
+                        <a href="{{route('products.edit', $product->id) }}">
                             <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>Edit</button>
                         </a>
+                    
                         <button class="btn btn-danger btn-sm delete" data-id="{{$product->id}}">
                             <i class="far fa-trash-alt">Delete</i>
                         </button>
