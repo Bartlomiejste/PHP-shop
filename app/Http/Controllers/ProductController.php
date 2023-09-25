@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertPostRequest;
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+
 use Exception;
 
 class ProductController extends Controller
@@ -16,7 +17,7 @@ class ProductController extends Controller
     public function index(): View
     {
         return view('products.index', [
-            'products' => Product::paginate(10)
+            'products' => Product::paginate(3)
         ]);
     }
 
@@ -31,10 +32,14 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
-    {
-        $product = new Product($request->all());
-        $product->image_path = $request->file('image')->store('products', 'public');
+    public function store(UpsertPostRequest $request): RedirectResponse
+    {      
+        $product = new Product($request->validated());
+        if ($request->hasFile('image')) {
+            $product->image_path = $request->file('image')->store('products', 'public');
+        } else {
+            return redirect(route('products.create'))->withErrors(['image' => 'Plik obrazu jest wymagany']);
+        }
         $product->save();
         return redirect(route('products.index'));
     }
@@ -63,9 +68,9 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product): RedirectResponse
+    public function update(UpsertPostRequest $request, Product $product): RedirectResponse
     {
-        $product->fill($request->all());
+        $product->fill($request->validated());
         
         if ($request->hasFile('image')) {
 

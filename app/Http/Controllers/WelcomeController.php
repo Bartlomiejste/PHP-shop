@@ -10,7 +10,7 @@ class WelcomeController extends Controller
     public function index(): View
     {
         return view('welcome', [
-            'products' => Product::paginate(10)
+            'products' => Product::paginate(3)
         ]);
     }
 }
