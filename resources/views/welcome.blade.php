@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col-md-3">
-            <h3 class="mb-5">Products</h3> 
+            <h3 class="mb-5">Products <span class="text-primary">{{count($products)}}</span></h3> 
             <div class="mb-5">
                 <h5>Category:</h5>
                 <div class="form-check">
@@ -83,11 +83,11 @@
                 @foreach($products as $product)
                     <div class="col">
                         <div class="card">
-                            @if(!is_null($product->image_path))
-                                <img src="{{ asset('storage/' . $product->image_path) }}" class="card-img-top" alt="ProductImg">
-                            @else
-                                <img src="#" class="card-img-top" alt="DefaultImg">
-                            @endif
+                        @if(!is_null($product->image_path))
+                            <img src="{{ asset('storage/' . $product->image_path) }}" class="card-img-top" alt="ProductImg">
+                        @else
+                            <img src="#" class="card-img-top" alt="DefaultImg">
+                        @endif
                                 <div class="card-body text-center">
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <p class="card-text">${{ $product->price }}</p>
