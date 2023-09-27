@@ -7,6 +7,10 @@ return [
         'price' => 'Price',
         'filter' => 'Search'
     ],
+    'menu' =>[
+        'users' => 'Users',
+        'products' => 'Products',
+    ],
     'columns' => [
         'actions' => 'Actions'
     ],
@@ -16,6 +20,9 @@ return [
     'button' => [
         'save' => 'Save',
         'add' => 'Add',
+        'edit' => 'Edit',
+        'delete' => 'Delete',
+        'view' => 'View',
     ],
     'user' => [
         'index_title' => 'List users',

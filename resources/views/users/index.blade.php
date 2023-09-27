@@ -6,11 +6,11 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Email</th>
-                <th scope="col">Imię</th>
-                <th scope="col">Nazwisko</th>
-                <th scope="col">Numer telefonu</th>
-                <th scope="col">Akcje</th>
+                <th scope="col">{{ __('Email') }}</th>
+                <th scope="col">{{ __('Name') }}</th>
+                <th scope="col">{{ __('Surname') }}</th>
+                <th scope="col">{{ __('Phone number') }}</th>
+                <th scope="col">{{ __('shop.columns.actions') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -23,10 +23,10 @@
                 <td>{{$user->phone_number}}</td>
                 <td>
                     <a href="#">
-                        <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>Edit</button>
+                        <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>{{ __('shop.button.edit') }}</button>
                     </a>
                     <button class="btn btn-danger btn-sm delete" data-id="{{$user->id}}">
-                        <i class="far fa-trash-alt">Delete</i>
+                        <i class="far fa-trash-alt">{{ __('shop.button.delete') }}</i>
                     </button>
                 </td>
             </tr>
@@ -39,6 +39,7 @@
 
 @section('javascript')
 const deleteUrl = "{{ url('users') }}/";
+const confirmDelete = "{{__('shop.messages.delete_confirm')}}"
 @endsection
 
 @section('js-files')

@@ -4,11 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <h1>Lista produktów</h1>
+            <h1>{{ __('shop.product.index_title') }}</h1>
         </div>
         <div class="col-6">
             <a style='float:right;' href="{{route('products.create')}}">
-                <button type="button" class="btn btn-primary">Dodaj</button>
+                <button type="button" class="btn btn-primary">{{ __('shop.button.add') }}</button>
             </a>
         </div>
     </div>
@@ -18,12 +18,12 @@
          <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nazwa</th>
-                    <th scope="col">Opis</th>
-                    <th scope="col">Ilość</th>
-                    <th scope="col">Cena</th>
-                    <th scope="col">Akcje</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">{{ __('shop.product.fields.name') }}</th>
+                    <th scope="col">{{ __('shop.product.fields.description') }}</th>
+                    <th scope="col">{{ __('shop.product.fields.amount') }}</th>
+                    <th scope="col">{{ __('shop.product.fields.price') }}</th>
+                    <th scope="col">{{ __('shop.columns.actions') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,15 +36,15 @@
                     <td>{{$product->price}}</td>
                     <td>
                         <a href="{{route('products.show', $product->id) }}">
-                            <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>View</button>
+                            <button class="btn btn-primary btn-sm"><i class="far fa-edit"></i>{{ __('shop.button.view') }}</button>
                         </a>
 
                         <a href="{{route('products.edit', $product->id) }}">
-                            <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>Edit</button>
+                            <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>{{ __('shop.button.edit') }}</button>
                         </a>
                     
                         <button class="btn btn-danger btn-sm delete" data-id="{{$product->id}}">
-                            <i class="far fa-trash-alt">Delete</i>
+                            <i class="far fa-trash-alt">{{ __('shop.button.delete') }}</i>
                         </button>
                     </td>
                 </tr>

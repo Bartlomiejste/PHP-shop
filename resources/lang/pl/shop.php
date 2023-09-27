@@ -7,15 +7,22 @@ return [
         'price' => 'Cena',
         'filter' => 'Filtruj'
     ],
+    'menu' =>[
+        'users' => 'Użytkownicy',
+        'products' => 'Produkty',
+    ],
     'columns' => [
         'actions' => 'Akcje'
     ],
     'messages' => [
-      'delete_confirm' => 'Czy na pewno chcesz usunąć rekord?'
+      'delete_confirm' => 'CxD?'
     ],
     'button' => [
         'save' => 'Zapisz',
         'add' => 'Dodaj',
+        'edit' => 'Edytuj',
+        'delete' => 'Usuń',
+        'view' => 'Podgląd',
     ],
     'user' => [
         'index_title' => 'Lista użytkowników',

@@ -36,4 +36,8 @@ Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware('
 
 Auth::routes();
 
+
+Route::get('language/{lang}', [App\Http\Controllers\LanguageController::class, 'switchLang'])->name('language.switch');
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

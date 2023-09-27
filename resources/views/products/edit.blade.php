@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nazwa') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('shop.product.fields.name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" maxlength="500" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $product->name }}" required autocomplete="name" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Opis') }}</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('shop.product.fields.description') }}</label>
 
                             <div class="col-md-6">
                                 <textarea id="description" maxlength="1500" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required autofocus>{{ $product->description }}</textarea>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="amount" class="col-md-4 col-form-label text-md-end">{{ __('Ilość') }}</label>
+                            <label for="amount" class="col-md-4 col-form-label text-md-end">{{ __('shop.product.fields.amount')}}</label>
 
                             <div class="col-md-6">
                                 <input id="amount" min="0" type="number" class="form-control @error('amount') is-invalid @enderror" name="amount" value="{{ $product->amount }}" required autocomplete="amount" autofocus>
@@ -55,7 +55,7 @@
 
 
                         <div class="row mb-3">
-                            <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('Cena') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('shop.product.fields.price') }}</label>
 
                             <div class="col-md-6">
                                 <input id="price" type="number" step="0.01" min="0" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $product->price }}" required autocomplete="price">
@@ -69,7 +69,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Grafika') }}</label>
+                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('shop.product.fields.image') }}</label>
 
                             <div class="col-md-6">
                                 <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image">
@@ -97,7 +97,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Edytuj') }}
+                                    {{ __('shop.button.save') }}
                                 </button>
                             </div>
                         </div>
