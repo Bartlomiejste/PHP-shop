@@ -15,7 +15,7 @@ return [
         'actions' => 'Akcje'
     ],
     'messages' => [
-      'delete_confirm' => 'CxD?'
+      'delete_confirm' => 'Na pewno chcesz usunąć tą pozycję?'
     ],
     'button' => [
         'save' => 'Zapisz',
