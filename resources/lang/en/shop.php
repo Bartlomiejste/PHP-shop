@@ -3,7 +3,13 @@
 return [
     'welcome' => [
         'products' => 'Products',
-        'categories' => 'Categories',
+        'categories' => [
+            'Elektronika' => 'Electronic',
+            'Akcesoria' => 'Accesorries',
+            'Inne' => 'Others',
+            'Jedzenie' => 'Food',
+            'Odzież' => 'Clothes',      
+    ],
         'price' => 'Price',
         'filter' => 'Search'
     ],
