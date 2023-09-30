@@ -8,6 +8,7 @@ export default defineConfig({
                 "resources/sass/app.scss",
                 "resources/js/app.js",
                 "public/js/delete.js",
+                "public/js/welcome.js",
             ],
             refresh: true,
         }),

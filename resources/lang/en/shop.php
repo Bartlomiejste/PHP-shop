@@ -11,7 +11,8 @@ return [
             'Odzież' => 'Clothes',      
     ],
         'price' => 'Price',
-        'filter' => 'Search'
+        'filter' => 'Search',
+        'sort' => 'Sort',
     ],
     'menu' =>[
         'users' => 'Users',

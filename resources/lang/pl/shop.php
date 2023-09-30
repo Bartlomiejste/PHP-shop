@@ -11,7 +11,8 @@ return [
             'Odzież' => 'Odzież',      
     ],
         'price' => 'Cena',
-        'filter' => 'Filtruj'
+        'filter' => 'Filtruj',
+        'sort' => "Sortuj",
     ],
     'menu' =>[
         'users' => 'Użytkownicy',
