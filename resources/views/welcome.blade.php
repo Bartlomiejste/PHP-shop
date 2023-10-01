@@ -44,6 +44,20 @@
                             <li><a class="dropdown-item" href="#">Option 4</a></li>
                         </ul>
                     </div>
+                    <div class="dropdown float-right">
+                        <a class="btn btn-lg btn-light dropdown-toggle products-actual-count" data-bs-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-labelledby="sortDropdown" aria-expanded="false">5<span
+                                class="caret"></span></a>
+                        <div class="dropdown-menu dropdown-menu-right products-count" aria-labelledby="sortDropdown"
+                            x-placement="bottom-end"
+                            style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
+                            <a class="dropdown-item" href="#">5</a>
+                            <a class="dropdown-item" href="#">10</a>
+                            <a class="dropdown-item" href="#">15</a>
+                            <a class="dropdown-item" href="#">20</a>
+                        </div>
+                    </div>
+
                 </div>
 
 
@@ -53,9 +67,10 @@
                             <div class="card">
                                 @if (!is_null($product->image_path))
                                     <img src="{{ asset('storage/' . $product->image_path) }}" class="card-img-top"
-                                        alt="ProductImg">
+                                        alt="ProductImg" style="object-fit: cover; height:240px;">
                                 @else
-                                    <img src="{{ $defaultImage }}" class="card-img-top" alt="DefaultImg">
+                                    <img src="{{ $defaultImage }}" class="card-img-top" alt="DefaultImg"
+                                        style="object-fit: cover; height:240px;">
                                 @endif
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{ $product->name }}</h5>
@@ -65,7 +80,7 @@
                         </div>
                     @endforeach
                 </div>
-                {{ $products->links() }}
+                {{-- {{ $products->links() }} --}}
             </div>
         </div>
     </div>
