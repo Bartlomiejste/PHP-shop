@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('helpers.flash-messages')
         <div class="row">
             <div class="col-6">
                 <h1>{{ __('shop.product.index_title') }}</h1>
@@ -67,6 +68,7 @@
 
 @section('javascript')
     const deleteUrl = "{{ url('products') }}/";
+    const confirmDelete = "{{ __('shop.messages.delete_confirm') }}"
 @endsection
 
 @section('js-files')
