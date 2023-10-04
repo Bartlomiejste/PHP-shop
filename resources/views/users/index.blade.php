@@ -24,11 +24,11 @@
                         <td>{{ $user->phone_number }}</td>
                         <td>
                             <a href="#">
-                                <button class="btn btn-success btn-sm"><i
-                                        class="far fa-edit"></i>{{ __('shop.button.edit') }}</button>
+                                <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>
+                                    {{ __('shop.button.edit') }}</button>
                             </a>
                             <button class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}">
-                                <i class="far fa-trash-alt">{{ __('shop.button.delete') }}</i>
+                                <i class="far fa-trash-alt"> {{ __('shop.button.delete') }}</i>
                             </button>
                         </td>
                     </tr>

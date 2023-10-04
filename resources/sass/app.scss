@@ -8,4 +8,10 @@
 @import 'bootstrap/scss/bootstrap';
 
 // Sweetalert2
-@import 'sweetalert2/src/sweetalert2.scss'
+@import 'sweetalert2/src/sweetalert2.scss';
+
+// Fontawesome
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";

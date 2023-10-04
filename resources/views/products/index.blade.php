@@ -43,17 +43,17 @@
                             </td>
                             <td>
                                 <a href="{{ route('products.show', $product->id) }}">
-                                    <button class="btn btn-primary btn-sm"><i
-                                            class="far fa-edit"></i>{{ __('shop.button.view') }}</button>
+                                    <button class="btn btn-primary btn-sm"><i class="fa-solid fa-pen-to-square"></i>
+                                        {{ __('shop.button.view') }}</button>
                                 </a>
 
                                 <a href="{{ route('products.edit', $product->id) }}">
-                                    <button class="btn btn-success btn-sm"><i
-                                            class="far fa-edit"></i>{{ __('shop.button.edit') }}</button>
+                                    <button class="btn btn-success btn-sm"><i class="fa-solid fa-edit"></i>
+                                        {{ __('shop.button.edit') }}</button>
                                 </a>
 
                                 <button class="btn btn-danger btn-sm delete" data-id="{{ $product->id }}">
-                                    <i class="far fa-trash-alt">{{ __('shop.button.delete') }}</i>
+                                    <i class="far fa-trash-alt"> {{ __('shop.button.delete') }}</i>
                                 </button>
                             </td>
                         </tr>
