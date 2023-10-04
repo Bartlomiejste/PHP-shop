@@ -28,8 +28,7 @@
                                     {{ __('shop.button.edit') }}</button>
                             </a>
                             <button class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}">
-                                <i class="far fa-trash-alt"> {{ __('shop.button.delete') }}</i>
-                            </button>
+                                <i class="far fa-trash-alt"></i> {{ __('shop.button.delete') }}</button>
                         </td>
                     </tr>
                 @endforeach
