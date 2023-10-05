@@ -14,6 +14,10 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!-- jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -91,11 +95,6 @@
             @yield('content')
         </main>
     </div>
-
-    <!-- jquery  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <script type="text/javascript">
         @yield('javascript')

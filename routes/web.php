@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
@@ -25,7 +27,11 @@ Route::middleware(['auth', 'verified'])->group(function() {
         Route::get('/users/list', [UserController::class, 'index']);
         Route::delete('/users/{user}', [UserController::class, 'destroy']);
     });
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/cart/list', [CartController::class, 'index'])->name('cart.index');
+        Route::post('/cart/{product}', [CartController::class, 'store'])->name('cart.store');
+        Route::delete('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
+        
+        Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
 // Route::get('/products', [ProductController::class, 'index'])->name(name:'products.index')->middleware('auth');
