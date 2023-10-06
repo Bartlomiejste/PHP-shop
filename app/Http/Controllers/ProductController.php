@@ -9,7 +9,10 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
 use Exception;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ProductController extends Controller
 {
@@ -76,10 +79,14 @@ class ProductController extends Controller
      */
     public function update(UpsertPostRequest $request, Product $product): RedirectResponse
     {
+      
+        $oldImagePath = $product->image_path;
         $product->fill($request->validated());
-        
-        if ($request->hasFile('image')) {
-
+        if ($request->hasFile('image') && request('image') !='') {
+            if (Storage::disk('public')->exists($oldImagePath)) {
+                Storage::disk('public')->delete($oldImagePath);
+            }
+            
             $product->image_path = $request->file('image')->store('products', 'public');
         
         }
@@ -106,4 +113,22 @@ class ProductController extends Controller
             ])->setStatusCode(500);
         }
     }
+
+
+    /**
+     * Download image of the specified resource in storage.
+     *
+     * @param  Product  $product
+     * @return RedirectResponse|StreamedResponse
+     */
+    
+     public function downloadImage(Product $product): RedirectResponse|StreamedResponse
+     {
+         if (Storage::disk('public')->exists($product->image_path)) {
+             return Storage::disk('public')->download($product->image_path);
+         }
+         return Redirect::back();
+     }
+     
+
 }
