@@ -6,6 +6,7 @@ export default defineConfig({
         laravel({
             input: [
                 "resources/sass/app.scss",
+                "resources/css/cart.css",
                 "resources/js/app.js",
                 "public/js/delete.js",
                 "public/js/welcome.js",

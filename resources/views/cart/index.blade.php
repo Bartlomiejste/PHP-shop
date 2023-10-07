@@ -12,7 +12,8 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="cart_container">
                             <div class="cart_title">Koszyk<small> ({{ $cart->getItems()->count() }}) </small></div>
-                            <form action="{{ route('orders.store') }}" method="POST" id="order-form">
+                            {{-- <form action="{{ route('orders.store') }}" method="POST" id="order-form"> --}}
+                            <form method="POST" id="order-form">
                                 @csrf
                                 <div class="cart_items">
                                     <ul class="cart_list">
@@ -50,7 +51,7 @@
                                     </ul>
                                 </div>
                                 <div class="order_total">
-                                    <div class="order_total_content text-md-right">
+                                    <div class="d-flex justify-content-end">
                                         <div class="order_total_title">Suma [PLN]:</div>
                                         <div class="order_total_amount">{{ $cart->getSum() }}</div>
                                     </div>
