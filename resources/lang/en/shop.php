@@ -17,6 +17,7 @@ return [
     'menu' =>[
         'users' => 'Users',
         'products' => 'Products',
+        'shopping cart' => 'Shopping Cart',
     ],
     'columns' => [
         'actions' => 'Actions'

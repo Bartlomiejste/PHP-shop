@@ -23,7 +23,7 @@
                         <td>{{ $user->surname }}</td>
                         <td>{{ $user->phone_number }}</td>
                         <td>
-                            <a href="#">
+                            <a href="{{ route('users.edit', $user->id) }}">
                                 <button class="btn btn-success btn-sm"><i class="far fa-edit"></i>
                                     {{ __('shop.button.edit') }}</button>
                             </a>

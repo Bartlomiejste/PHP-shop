@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row mt-4">
             <form class="col-md-3 sidebar-filter">
-                <h3 class="mb-5">{{ __('shop.welcome.products') }} <span class="text-primary">{{ count($products) }}</span>
+                <h3 class="mb-5">{{ __('shop.welcome.products') }} <span class="text-primary">{{ $totalProducts }}</span>
                 </h3>
                 <div class="mb-5">
                     <h5>{{ __('shop.product.fields.category') }}</h5>
@@ -46,15 +46,16 @@
                     </div>
                     <div class="dropdown float-right">
                         <a class="btn btn-lg btn-light dropdown-toggle products-actual-count" data-bs-toggle="dropdown"
-                            role="button" aria-haspopup="true" aria-labelledby="sortDropdown" aria-expanded="false">5<span
+                            role="button" aria-haspopup="true" aria-labelledby="sortDropdown" aria-expanded="false">6<span
                                 class="caret"></span></a>
                         <div class="dropdown-menu dropdown-menu-right products-count" aria-labelledby="sortDropdown"
                             x-placement="bottom-end"
                             style="will-change: transform; position: absolute; transform: translate3d(120px, 48px, 0px); top: 0px; left: 0px;">
-                            <a class="dropdown-item" href="#">5</a>
-                            <a class="dropdown-item" href="#">10</a>
-                            <a class="dropdown-item" href="#">15</a>
-                            <a class="dropdown-item" href="#">20</a>
+                            <a class="dropdown-item" href="#">6</a>
+                            <a class="dropdown-item" href="#">12</a>
+                            <a class="dropdown-item" href="#">18</a>
+                            <a class="dropdown-item" href="#">24</a>
+                            <a class="dropdown-item" href="#">Wszystkie</a>
                         </div>
                     </div>
 
@@ -74,7 +75,7 @@
                                 @endif
                                 <div class="card-body text-center">
                                     <h5 class="card-title">{{ $product->name }}</h5>
-                                    <p class="card-text">${{ $product->price }}</p>
+                                    <p class="card-text">PLN {{ $product->price }}</p>
                                 </div>
                                 <button class="btn btn-success btn-sm add-cart-button" data-id="{{ $product->id }}"
                                     @guest disabled @endguest><i class="fa-solid fa-cart-shopping"></i> Dodaj do
@@ -96,7 +97,7 @@
     defaultImage: '{{ $defaultImage }}',
     addToCart: '{{ url('cart') }}/',
     listCart: '{{ url('cart') }}',
-    {{-- isGuest: '{{ $isGuest }}' --}}
+    isGuest: '{{ $isGuest }}'
     };
 @endsection
 

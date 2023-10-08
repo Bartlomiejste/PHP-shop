@@ -17,6 +17,7 @@ return [
     'menu' =>[
         'users' => 'Użytkownicy',
         'products' => 'Produkty',
+        'shopping cart' => 'Koszyk',
     ],
     'columns' => [
         'actions' => 'Akcje'
@@ -36,6 +37,9 @@ return [
         'status' => [
             'delete' => [
                 'success' => 'Użytkownik usunięty!'
+            ],
+            'update' => [
+                'success' => 'Użytkownik zaktualizowany!'
             ],
         ],
     ],
