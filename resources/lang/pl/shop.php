@@ -18,6 +18,7 @@ return [
         'users' => 'Użytkownicy',
         'products' => 'Produkty',
         'shopping cart' => 'Koszyk',
+        'orders' => 'Zamówienia',
     ],
     'columns' => [
         'actions' => 'Akcje'

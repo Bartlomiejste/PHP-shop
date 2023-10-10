@@ -18,6 +18,7 @@ return [
         'users' => 'Users',
         'products' => 'Products',
         'shopping cart' => 'Shopping Cart',
+        'orders' => 'Orders',
     ],
     'columns' => [
         'actions' => 'Actions'
